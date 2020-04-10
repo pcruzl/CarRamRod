@@ -8,7 +8,7 @@ public class Driver {
 	public static void main(String[] args) {
 		Scanner in = new Scanner(System.in);
 		String PlayAgain="Y";
-		
+		boolean Stay=false;
 		
 		Deck myDeck = new Deck();
 		myDeck.DeckMaker();
@@ -20,12 +20,11 @@ public class Driver {
 		Blackjack mygame = new Blackjack();
 		mygame.Deal(myDeck);
 	//	System.out.println(myDeck.getLength());
+		do {
 		System.out.println(mygame.show());
-		
-	
-		mygame.HitorStay(myDeck);
-		System.out.println(mygame.show());
-		mygame.HitorStay(myDeck);
+		Stay=mygame.HitorStay(myDeck);
+		}
+		while(Stay==false);
 		System.out.println(mygame.show());
 		System.out.println("Play again? Y/N");
 		PlayAgain=in.nextLine();
