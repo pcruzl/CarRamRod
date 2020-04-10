@@ -6,6 +6,9 @@ private int value;
 private String suitName;
 private String cardName;
 
+
+//The card class is made so that two ints designate the card for example (0,1)= ace of spades
+//This will help when we have a bunch of gif files to link to them and allows a for loop to make a deck.
 public Card(int s, int v) {
 	this.suit=s;
 	this.value=v;
@@ -13,6 +16,10 @@ public Card(int s, int v) {
 	this.cardName="";
 }
 
+
+//Notice that suits are 0-3 and values are 1-13.  The values start at 1 so I don't have to shift them all when adding
+//A total value for the cards.  
+//The result of make name is a string like "Ace of Spades"
 public String makeName(int s, int v) {
 	int dasuit=s;
 	int davalue=v;
@@ -63,15 +70,17 @@ public String makeName(int s, int v) {
 	return result;
 }
 	
-	
+//for totaling the cards in blackjack
 public int getValue() {
 	return value;
 }
 
+//setValue will never be used.
 public void setValue(int value) {
 	this.value = value;
 }
 
+//ToString just calls makeName() method.
 public String toString() {
 String result="";
 result = makeName(suit,value);

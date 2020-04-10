@@ -14,13 +14,15 @@ int Dvalue2;
 int Pvalue2;
 Scanner in = new Scanner(System.in);
 
-
+//The black jack object has 2 hands of cards as ArrayLists and their associated value.
 public Blackjack() {
 	this.Dvalue=0;
 	this.Pvalue=0;
 	Dhand= new ArrayList<Card>();
 	Phand= new ArrayList<Card>();
 }
+
+//Deals the deck correctly alternating player and dealer.
 public Deck Deal(Deck a) {
 Dhand.add(a.DealCard());
 Phand.add(a.DealCard());
@@ -29,14 +31,29 @@ Phand.add(a.DealCard());
 return a;
 }
 
-public void HitorStay(Deck b) {
+//HitorStay method takes keyboard input and decides which method to move forward with.  
+//Eventually this will be JavaFx buttons
+public boolean HitorStay(Deck b) {
+	boolean stay = false;
 	System.out.println("Hit=H Stay=S");
 	String a = in.nextLine();
-	if(a.equals("H")||a.equals("h")) {PlayerHit(b);}
-	else if(a.equals("S")||a.equals("s")) {DealerTurn(b);}
-	else {System.out.println("Please input H or S");}
+	if(a.equals("H")||a.equals("h")) {
+		
+		PlayerHit(b);
+		return stay;}
+	else if(a.equals("S")||a.equals("s")) {
+		stay=true;
+		DealerTurn(b);
+		return stay;}
+	else {
+		System.out.println("Please input H or S");
+		return stay;}
 }
 
+//This is one of the main methods of the game.  Aces are worth 1 or 11 so we have a boolean representing if an ace showed up.
+//the method takes face cards and makes them worth 10.  It counts the totals and displays the result.
+//It shows if the player busts.  Eventually most of the business of the blackjack game will be in this method.
+//As of now it's still a work in progress.
 public String show() {
 	String result ="";
 	boolean DAce=false;
@@ -77,9 +94,9 @@ public String show() {
 return result;
 }
 
+//When the player chooses to hit it deals a card and goes to hit or stay. .
 public Deck PlayerHit(Deck a) {
 	Phand.add(a.DealCard());
-	HitorStay(a);
 	return a;
 
 }
