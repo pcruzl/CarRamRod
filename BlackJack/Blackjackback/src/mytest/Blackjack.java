@@ -13,13 +13,15 @@ final int Dstay=16;
 int Dvalue2;
 int Pvalue2;
 Scanner in = new Scanner(System.in);
+Statistics stats;
 
 //The black jack object has 2 hands of cards as ArrayLists and their associated value.
-public Blackjack() {
+public Blackjack(Statistics s) {
 	this.Dvalue=0;
 	this.Pvalue=0;
 	Dhand= new ArrayList<Card>();
 	Phand= new ArrayList<Card>();
+	stats = s;
 }
 
 //Deals the deck correctly alternating player and dealer.
@@ -38,11 +40,12 @@ public boolean HitorStay(Deck b) {
 	System.out.println("Hit=H Stay=S");
 	String a = in.nextLine();
 	if(a.equals("H")||a.equals("h")) {
-		
+		stats.setNumberOfHits(stats.getNumberOfHits() + 1);
 		PlayerHit(b);
 		return stay;}
 	else if(a.equals("S")||a.equals("s")) {
 		stay=true;
+		stats.setNumberOfStays(stats.getNumberOfStays() + 1);
 		DealerTurn(b);
 		return stay;}
 	else {
@@ -80,7 +83,10 @@ public String show() {
 	else if(Dvalue+11>=22) {DAce=false;
 	}
 	
-	if(Pvalue>21) {result+="\nPlayer bust with "+ Pvalue+" \nDealer wins.";}
+	if(Pvalue>21) {
+		result+="\nPlayer bust with "+ Pvalue+" \nDealer wins.";
+		stats.setNumberOfBusts(stats.getNumberOfBusts() + 1);
+	}
 	else {
 	result+="\nPlayer has " + Pvalue;
 	if(PAce==true) {
