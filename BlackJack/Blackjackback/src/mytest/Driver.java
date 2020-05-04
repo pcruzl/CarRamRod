@@ -31,6 +31,7 @@ public class Driver {
 		
 		}
 		while(PlayAgain.equals("Y")||PlayAgain.equals("y"));
+		in.close(); //Remember to close Scanners to not get yelled at by IDE
 	}
 
 }
