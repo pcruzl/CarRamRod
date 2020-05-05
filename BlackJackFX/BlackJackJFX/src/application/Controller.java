@@ -68,6 +68,7 @@ public class Controller implements Initializable{
 	boolean playagain=true;
 	int hitcount=0;
 	int dealercount=0;
+	Statistics stats = new Statistics();
 	
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		
@@ -76,6 +77,7 @@ public class Controller implements Initializable{
 		myDeck.DeckMaker();
 		myDeck.Shuffle();
 		mygame.Deal(myDeck);
+		stats.setNumberOfGames(stats.getNumberOfGames() + 1);
 		
 		String[] DealerHand = mygame.showD().split(",");
 		String[] PlayerHand = mygame.showP().split(",");
@@ -132,6 +134,7 @@ public class Controller implements Initializable{
 		@FXML
 	    void Hit(ActionEvent event) {
 			hitcount++;
+			stats.setNumberOfHits(stats.getNumberOfHits() + 1);
 			mygame.PlayerHit(myDeck);
 			mygame.tally();
 			int total=mygame.getPvalue();
@@ -141,12 +144,15 @@ public class Controller implements Initializable{
 			
 			if(total>21) {
 				Textfield.setText("Bust->"+Stotal);	
+				stats.setNumberOfBusts(stats.getNumberOfBusts() + 1);
 			}
 			
 	    }
 
 	    @FXML
 	    void Play(ActionEvent event) {
+	    	stats.setNumberOfGames(stats.getNumberOfGames() + 1);
+	    	stats.saveStats();
 	    	Main app=new Main();
 	    	app.start(new Stage());
 	    	Stage stage = (Stage) Textfield1.getScene().getWindow();
@@ -156,12 +162,13 @@ public class Controller implements Initializable{
 
 	    @FXML
 	    void Quit(ActionEvent event) {
-	    Platform.exit();
+	    	stats.saveStats();
+	    	Platform.exit();
 	    }
 
 	    @FXML
 	    void Stay(ActionEvent event) {
-	    	
+	    	stats.setNumberOfStays(stats.getNumberOfStays() + 1);
 	    	for (int i=0;i<6;i++){
 	    	mygame.DealerTurn(myDeck);
 	    	mygame.tally();
