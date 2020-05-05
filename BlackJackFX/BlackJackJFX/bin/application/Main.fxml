@@ -6,12 +6,14 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Controller">
    <children>
       <SplitPane dividerPositions="0.7982456140350878" layoutX="289.0" layoutY="333.0" prefHeight="800.0" prefWidth="800.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
         <items>
-          <AnchorPane accessibleRole="IMAGE_VIEW" minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+          <AnchorPane accessibleRole="IMAGE_VIEW" minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0" style="-fx-background-image: url('textures/table_bg-2.jpg');">
                <children>
                   <Rectangle fx:id="D1" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="150.0" layoutX="45.0" layoutY="31.0" stroke="BLACK" strokeType="INSIDE" visible="false" width="100.0" />
                   <Rectangle fx:id="D2" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="150.0" layoutX="145.0" layoutY="31.0" stroke="BLACK" strokeType="INSIDE" visible="false" width="100.0" />
@@ -37,12 +39,22 @@
                <children>
                   <VBox alignment="CENTER" layoutX="44.0" layoutY="299.0" prefHeight="798.0" prefWidth="158.0" spacing="20.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                      <children>
-                        <TextField fx:id="Textfield1" />
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Dealer">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                        </Text>
+                        <TextField fx:id="Textfield1" editable="false" />
                         <Button mnemonicParsing="false" onAction="#Hit" text="Hit" />
                         <Button mnemonicParsing="false" onAction="#Stay" text="Stay" />
                         <Button fx:id="PlayB" mnemonicParsing="false" onAction="#Play" text="Play" />
                         <Button mnemonicParsing="false" onAction="#Quit" text="Quit" />
-                        <TextField fx:id="Textfield" />
+                        <TextField fx:id="Textfield" editable="false" />
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Player">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                        </Text>
                      </children>
                   </VBox>
                </children>
