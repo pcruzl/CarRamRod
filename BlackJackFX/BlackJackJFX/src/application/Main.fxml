@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Rectangle?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Controller">
+   <children>
+      <SplitPane dividerPositions="0.7982456140350878" layoutX="289.0" layoutY="333.0" prefHeight="800.0" prefWidth="800.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <items>
+          <AnchorPane accessibleRole="IMAGE_VIEW" minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+               <children>
+                  <Rectangle fx:id="D1" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="150.0" layoutX="45.0" layoutY="31.0" stroke="BLACK" strokeType="INSIDE" visible="false" width="100.0" />
+                  <Rectangle fx:id="D2" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="150.0" layoutX="145.0" layoutY="31.0" stroke="BLACK" strokeType="INSIDE" visible="false" width="100.0" />
+                  <Rectangle fx:id="D3" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="150.0" layoutX="195.0" layoutY="31.0" stroke="BLACK" strokeType="INSIDE" visible="false" width="100.0" />
+                  <Rectangle fx:id="D4" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="150.0" layoutX="245.0" layoutY="31.0" stroke="BLACK" strokeType="INSIDE" visible="false" width="100.0" />
+                  <Rectangle fx:id="D5" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="150.0" layoutX="295.0" layoutY="31.0" stroke="BLACK" strokeType="INSIDE" visible="false" width="100.0" />
+                  <Rectangle fx:id="D6" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="150.0" layoutX="345.0" layoutY="31.0" stroke="BLACK" strokeType="INSIDE" visible="false" width="100.0" />
+                  <Rectangle fx:id="D7" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="150.0" layoutX="395.0" layoutY="31.0" stroke="BLACK" strokeType="INSIDE" visible="false" width="100.0" />
+                  <Rectangle fx:id="D8" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="150.0" layoutX="445.0" layoutY="31.0" stroke="BLACK" strokeType="INSIDE" visible="false" width="100.0" />
+                  <Rectangle fx:id="D9" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="150.0" layoutX="495.0" layoutY="31.0" stroke="BLACK" strokeType="INSIDE" visible="false" width="100.0" />
+                  <Rectangle fx:id="P1" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="150.0" layoutX="45.0" layoutY="624.0" stroke="BLACK" strokeType="INSIDE" visible="false" width="100.0" />
+                  <Rectangle fx:id="P2" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="150.0" layoutX="145.0" layoutY="624.0" stroke="BLACK" strokeType="INSIDE" visible="false" width="100.0" />
+                  <Rectangle fx:id="P3" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="150.0" layoutX="195.0" layoutY="624.0" stroke="BLACK" strokeType="INSIDE" visible="false" width="100.0" />
+                  <Rectangle fx:id="P4" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="150.0" layoutX="245.0" layoutY="624.0" stroke="BLACK" strokeType="INSIDE" visible="false" width="100.0" />
+                  <Rectangle fx:id="P5" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="150.0" layoutX="295.0" layoutY="624.0" stroke="BLACK" strokeType="INSIDE" visible="false" width="100.0" />
+                  <Rectangle fx:id="P6" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="150.0" layoutX="345.0" layoutY="624.0" stroke="BLACK" strokeType="INSIDE" visible="false" width="100.0" />
+                  <Rectangle fx:id="P7" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="150.0" layoutX="395.0" layoutY="624.0" stroke="BLACK" strokeType="INSIDE" visible="false" width="100.0" />
+                  <Rectangle fx:id="P8" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="150.0" layoutX="445.0" layoutY="624.0" stroke="BLACK" strokeType="INSIDE" visible="false" width="100.0" />
+                  <Rectangle fx:id="P9" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="150.0" layoutX="495.0" layoutY="624.0" stroke="BLACK" strokeType="INSIDE" visible="false" width="100.0" />
+               </children>
+            </AnchorPane>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+               <children>
+                  <VBox alignment="CENTER" layoutX="44.0" layoutY="299.0" prefHeight="798.0" prefWidth="158.0" spacing="20.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <TextField fx:id="Textfield1" />
+                        <Button mnemonicParsing="false" onAction="#Hit" text="Hit" />
+                        <Button mnemonicParsing="false" onAction="#Stay" text="Stay" />
+                        <Button fx:id="PlayB" mnemonicParsing="false" onAction="#Play" text="Play" />
+                        <Button mnemonicParsing="false" onAction="#Quit" text="Quit" />
+                        <TextField fx:id="Textfield" />
+                     </children>
+                  </VBox>
+               </children>
+            </AnchorPane>
+        </items>
+      </SplitPane>
+   </children>
+</AnchorPane>
