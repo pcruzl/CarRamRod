@@ -45,10 +45,10 @@
                            </font>
                         </Text>
                         <TextField fx:id="Textfield1" editable="false" />
-                        <Button mnemonicParsing="false" onAction="#Hit" text="Hit" />
-                        <Button mnemonicParsing="false" onAction="#Stay" text="Stay" />
-                        <Button fx:id="PlayB" mnemonicParsing="false" onAction="#Play" text="Play" />
-                        <Button mnemonicParsing="false" onAction="#Quit" text="Quit" />
+                        <Button fx:id="hitButton" mnemonicParsing="false" onAction="#Hit" text="Hit" />
+                        <Button fx:id="stayButton" mnemonicParsing="false" onAction="#Stay" text="Stay" />
+                        <Button fx:id="playButton" mnemonicParsing="false" onAction="#Play" text="Play" />
+                        <Button fx:id="quitButton" mnemonicParsing="false" onAction="#Quit" text="Quit" />
                         <TextField fx:id="Textfield" editable="false" />
                         <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Player">
                            <font>

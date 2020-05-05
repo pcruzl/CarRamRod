@@ -1,10 +1,7 @@
 package application;
 
 import java.net.URL;
-import java.util.ArrayList;
 import java.util.ResourceBundle;
-import java.util.Scanner;
-
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -60,6 +57,14 @@ public class Controller implements Initializable{
     @FXML
     private TextField Textfield1;
 
+    @FXML
+    private Button hitButton;
+    @FXML
+    private Button stayButton;
+    @FXML
+    private Button playButton;
+    @FXML
+    private Button quitButton;
   	
 	Deck myDeck = new Deck();
 	Blackjack mygame = new Blackjack();
@@ -129,6 +134,16 @@ public class Controller implements Initializable{
 			}
 			while(playagain=true);
 		}
+		
+		/**
+		 * Things to do to GUI when game is over
+		 */
+		public void gameOver() {
+			hitButton.setDisable(true);
+			stayButton.setDisable(true);
+			playButton.setDefaultButton(true); //Press enter to restart game
+			quitButton.setCancelButton(true); //Press [ESC] to close game window
+		}
 	
 	
 		@FXML
@@ -145,6 +160,7 @@ public class Controller implements Initializable{
 			if(total>21) {
 				Textfield.setText("Bust->"+Stotal);	
 				stats.setNumberOfBusts(stats.getNumberOfBusts() + 1);
+				gameOver();
 			}
 			
 	    }
@@ -176,7 +192,10 @@ public class Controller implements Initializable{
 	    	int total=mygame.getDvalue();
 			String Stotal=Integer.toString(total);
 			Textfield1.setText(Stotal);
-			if(total>21) {Textfield1.setText("Bust->"+Stotal);}
+			if(total>21) {
+				Textfield1.setText("Bust->"+Stotal);
+				gameOver();
+			}
 			showcards();
 	    }
 	
