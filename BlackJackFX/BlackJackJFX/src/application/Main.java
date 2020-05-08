@@ -14,7 +14,7 @@ public class Main extends Application {
 			Parent root = FXMLLoader.load(getClass().getResource("Main.fxml"));
 			Scene scene = new Scene(root,800,800);
 			scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
-			primaryStage.setTitle("BlackjackFX");
+			primaryStage.setTitle("BlackJackFX");
 			primaryStage.setScene(scene);
 			primaryStage.show();
 		} catch(Exception e) {
