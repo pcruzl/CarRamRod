@@ -1,3 +1,6 @@
+//Class Decription: We were unable to properly use this class because the scenebuilder was not properly loading for us
+
+
 package application;
 
 import java.io.*;

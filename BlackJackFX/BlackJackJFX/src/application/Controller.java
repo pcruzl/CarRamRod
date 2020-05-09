@@ -75,6 +75,7 @@ public class Controller implements Initializable{
 	int dealercount=0;
 	Statistics stats = new Statistics();
 	
+	
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		
 		
@@ -146,6 +147,9 @@ public class Controller implements Initializable{
 		}
 	
 	
+		/**
+		 * @param event
+		 */
 		@FXML
 	    void Hit(ActionEvent event) {
 			hitcount++;
@@ -199,6 +203,9 @@ public class Controller implements Initializable{
 			showcards();
 	    }
 	
+	    /**this method will display the cards of the dealer
+	     * 
+	     */
 	    public void showdealer() {
 	    	
 	    	String[] DealerHand = mygame.showD().split(",");
@@ -255,6 +262,9 @@ public class Controller implements Initializable{
 	    	}
 	    }
 	    	    
+	    /**This void method will display the cards of the player
+	     * 
+	     */
 	    public void showcards() {
 	    	String[] PlayerHand = mygame.showP().split(",");
 	    	switch (hitcount) {
